@@ -1,5 +1,5 @@
 ```
- <ElTableRouyi
+     <ElTableRouyi
         :table-config="tableConfig"
         :column="tableColumn"
         @pagination="getList"
@@ -19,6 +19,16 @@
         :tableList="userList"
 
         >
+          <template  #status="scope" >
+            <el-switch
+              v-model="scope.row.status"
+              active-value="0"
+              inactive-value="1"
+              @change="handleStatusChange(scope.row)"
+            ></el-switch>
+          </template>
+
+        </ElTableRouyi>
 ```
 
 
